@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gray;
+    color: white;
+    height: 80vh;
+    /* 100%ün 80lik kısmını kaplaması için */
+    display: flex;
+    flex-direction: column;
+    /* default aslında row ama biz elementlerin alt alta gelmesi için 
+    column kullanıyoruz */
+    align-items: center;
+    overflow: hidden;
+    /* scroll barın çıkmasını engellemek için */
+}
+
+.container {
+    padding: 20px 20px;
+    height: 450px;
+    width: 450px;
+    position: relative;
+    /* buna relative diyoruz ki child elementleri absolute vs yapabilelim */
+}
+
+.graphic {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 4px;
+}
+
+.item {
+    display: none;
+}
+
+#wrong-letters {
+    position: absolute;
+    /* buna absolute diyebilmek için parent elementi position: relative 
+    yapmak gerekecek (yani container classını) aksi halde body'ye göre 
+    konumlanır */
+    top: 30px;
+    right: 30px;
+}
+
+#word {
+    display: flex;
+    /* kelimeleri yan yana konumlandırmak için flex */
+    position: absolute;
+    /* içerdeki elementlerin yerlerini değiştirmek için */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* aslında letter classına önce burada stil verip daha sonra 
+sileceğiz. JSde daha sonra bu div i ekleyeceğiz, çünkü bu harfleri
+bize kullanıcı verecek */
+.letter {
+    border-bottom: 3px solid yellow;
+    font-size: 30px;
+    margin: 0 3px;
+    height: 40px;
+    width: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-container{
+    background-color: rgba(0, 0, 0, 0.3); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* display: flex */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+/*öncelikle structure için burada bir display: flex yazıyoruz
+ama bunu daha sonra display: none ile değiştireceğiz ki sadece
+kazanınca pop up etsin  */ 
+
+.popup{
+    background-color: green;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold;
+    
+}
