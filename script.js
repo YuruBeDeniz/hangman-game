@@ -30,9 +30,10 @@ function displayWord(){
     `).join('')
        }
     `;
-//console.log(word_el.innerHTML)    
 }  
 
+
+//console.log(word_el.innerHTML) 
 
 window.addEventListener('keydown', function(e){
     const letter = e.key;
