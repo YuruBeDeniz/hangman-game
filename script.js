@@ -44,9 +44,9 @@ window.addEventListener('keydown', function(e){
         }
 
         if(!selectedWord.includes(letter)){
-            if(wrongLetters.includes(letter)){
+/*             if(wrongLetters.includes(letter)){
                showRecurringLetterMessage() 
-            }
+            } */
             if(!wrongLetters.includes(letter)){
                 wrongLetters.push(letter);
                // console.log(wrongLetters)
@@ -60,13 +60,13 @@ window.addEventListener('keydown', function(e){
 
 
 
-function showRecurringLetterMessage(){
+/* function showRecurringLetterMessage(){
     recurring_letter.innerText = 'You have already entered that letter.';
     let alertMessage = recurring_letter.innerText;
     setTimeout(function(){
         alertMessage.hide();
     }, 3000)
-}
+} */
 
 
  
