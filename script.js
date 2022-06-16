@@ -2,7 +2,7 @@ const word_el = document.getElementById('word');
 const wrongLetters_el = document.getElementById('wrong-letters');
 const letter_el = document.getElementsByClassName('letter');
 const popup = document.getElementById('popup-container');
-const bodyParts = document.querySelectorAll('.item');
+let bodyParts = document.querySelectorAll('.item');
 const message = document.getElementById('message');
 const recurring_letter = document.getElementById('recurring-letter');
 const playAgainButton = document.getElementById('play-again');
@@ -57,17 +57,6 @@ window.addEventListener('keydown', function(e){
     checkWinOrLose ()    
     }
 })
-
-
-
-/* function showRecurringLetterMessage(){
-    recurring_letter.innerText = 'You have already entered that letter.';
-    let alertMessage = recurring_letter.innerText;
-    setTimeout(function(){
-        alertMessage.hide();
-    }, 3000)
-} */
-
 
  
 function checkWinOrLose (){
@@ -124,18 +113,30 @@ function showBodyParts(){
 
 
 playAgainButton.addEventListener('click', function(){
-    popup.style.display = 'none';
+/*  popup.style.display = 'none';
     wrongLetters.length = 0;
     correctLetters.length = 0;
     displayWord();
     displayWrongLetters();
-    selectedWord = getRandomWord();
+    selectedWord = getRandomWord(); */
+    window.location.reload()
+
 })
 
+//console.log(bodyParts)
 
 /* function showPopUpMessage(message){
     if(allLettersCorrect){
       popup.innerHTML = `<h2 id='message'>${message}</h2>` 
       popup.style.display = 'flex';
     }    
+} */
+
+
+/* function showRecurringLetterMessage(){
+    recurring_letter.innerText = 'You have already entered that letter.';
+    let alertMessage = recurring_letter.innerText;
+    setTimeout(function(){
+        alertMessage.hide();
+    }, 3000)
 } */
