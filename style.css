@@ -44,6 +44,7 @@ body {
     right: 30px;
 }
 
+
 #word {
     display: flex;
     /* kelimeleri yan yana konumlandırmak için flex */
@@ -68,6 +69,15 @@ bize kullanıcı verecek */
     align-items: center;
 }
 
+#recurring-letter {
+    position: relative;
+    top: 30px;
+    right: 0px;
+    color: rgb(231, 245, 249);
+    font-weight: bold;
+    text-align: center;
+}
+
 #popup-container{
     background-color: rgba(0, 0, 0, 0.3); 
     position: fixed;
@@ -85,7 +95,7 @@ ama bunu daha sonra display: none ile değiştireceğiz ki sadece
 kazanınca pop up etsin  */ 
 
 .popup{
-    background-color: green;
+    background-color: rgb(5, 182, 188);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
@@ -96,4 +106,9 @@ span {
     font-size: 20px;
     font-weight: bold;
     
+}
+
+#play-again {
+    border-radius: 5px;
+    background-color: antiquewhite;
 }
