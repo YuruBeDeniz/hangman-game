@@ -22,22 +22,27 @@ function getRandomWord(){
 
 
 function displayWord(){
-    word_el.innerHTML = `
-    ${selectedWord.split('').map(letter => `
-       <div class="letter">
-          ${correctLetters.includes(letter) ? letter: ''} 
-        </div>
-    `).join('')
-       }
-    `;
-}  
+    word_el.innerHTML = selectedWord.split('').map(function (letter){
+    if (correctLetters.includes(letter)){
+        return `<div class="letter">${letter}</div>`
+    }    
+    if (letter === ' '){
+        return '<div class="space"> </div>'
+    } 
+    return '<div class="letter"></div>'
+    
+}
 
+).join('')
+
+}  
+//▯
 
 //console.log(word_el.innerHTML) 
 
 window.addEventListener('keydown', function(e){
     const letter = e.key;
-    if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 222 || e.keyCode === 32){
+    if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 222 /* || e.keyCode === 32 */){
         
         if(selectedWord.includes(letter)){
             correctLetters.push(letter);
@@ -63,7 +68,7 @@ window.addEventListener('keydown', function(e){
 function checkWinOrLose (){
     let allLettersCorrect = true;   
     selectedWord.split('').forEach(function (letter){
-        if(!correctLetters.includes(letter)){
+        if(letter !== ' ' && !correctLetters.includes(letter)){
             allLettersCorrect = false;
         } 
     })
