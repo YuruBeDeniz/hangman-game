@@ -15,8 +15,8 @@ displayWord()
 
 
 function getRandomWord(){
-    const words = ['dune', 'solaris', 'foundation', 'earthsea',
-     'the word for world is forest'];
+    const words = ['dune', 'solaris', 'foundation', 'a wizard of earthsea',
+     'the word for world is forest', 'harry potter'];
     return words[Math.floor(Math.random() * words.length)]
 }
 
@@ -30,15 +30,12 @@ function displayWord(){
         return '<div class="space"> </div>'
     } 
     return '<div class="letter"></div>'
-    
 }
 
 ).join('')
 
 }  
-//▯
-
-//console.log(word_el.innerHTML) 
+ 
 
 window.addEventListener('keydown', function(e){
     const letter = e.key;
